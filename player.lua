@@ -96,24 +96,24 @@ end
 
 function player_animate()
 	if player.jumping then
-		player.sp=7
+		player.sp=9
 	elseif player.falling then
-		player.sp=8
+		player.sp=11
 	elseif player.sliding then
-		player.sp=8
+		player.sp=10
 	elseif player.running then
 		if time()-player.anim>.1 then
 			player.anim=time()
 			player.sp+=1
-			if player.sp>6 then
-				player.sp=3
+			if player.sp>8 then
+				player.sp=6
 			end
 		end
 	else --player idle
-		if time()-player.anim>.3 then
+		if time()-player.anim>.1 then
 			player.anim=time()
 			player.sp+=1
-			if player.sp>2 then
+			if player.sp>4 then
 				player.sp=1
 			end
 		end
