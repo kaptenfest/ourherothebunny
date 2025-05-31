@@ -98,7 +98,7 @@ function player_animate()
 	if player.jumping then
 		player.sp=8
 	elseif player.falling then
-		player.sp=10
+		player.sp=11
 	elseif player.sliding then
 		player.sp=9
 	elseif player.running == true then
