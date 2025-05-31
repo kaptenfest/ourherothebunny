@@ -10,7 +10,7 @@ function _init()
 		dy=0,
 		max_dx=2,
 		max_dy=3,
-		acc=0.5,
+		acc=0.2,
 		boost=4,
 		anim=0,
 		running=false,

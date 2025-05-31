@@ -1,4 +1,4 @@
-function _update()
+function _update60()
   player_update()
   player_animate()
 
@@ -21,7 +21,7 @@ function _update()
 end
 
 function _draw()
-  cls(12)
+  cls(0)
   camera(cam_x, 0)
 	map(0,0)
   spr(player.sp,player.x,player.y,1,1,player.flp)

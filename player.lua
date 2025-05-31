@@ -7,14 +7,14 @@ function player_update()
 	--controls
 
 	if btn(⬅️) then
-		player.dx-=player.acc
 		player.running=true
+		player.dx-=player.acc
 		player.flp=true
 	end
 
 	if btn(➡️) then
-		player.dx+=player.acc
 		player.running=true
+		player.dx+=player.acc
 		player.flp=false
 	end
 
@@ -96,17 +96,17 @@ end
 
 function player_animate()
 	if player.jumping then
-		player.sp=9
+		player.sp=8
 	elseif player.falling then
-		player.sp=11
-	elseif player.sliding then
 		player.sp=10
-	elseif player.running then
-		if time()-player.anim>.1 then
+	elseif player.sliding then
+		player.sp=9
+	elseif player.running == true then
+		if time()-player.anim>.08 then
 			player.anim=time()
 			player.sp+=1
 			if player.sp>8 then
-				player.sp=6
+				player.sp=5
 			end
 		end
 	else --player idle
