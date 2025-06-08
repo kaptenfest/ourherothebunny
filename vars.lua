@@ -1,3 +1,11 @@
+	-- buttons
+	-- ⬅️
+	-- ➡️
+	-- ⬆️
+	-- ⬇️
+	-- 🅾️
+	-- ❎
+
 function _init()
 	player={
 		sp=1,
@@ -8,16 +16,18 @@ function _init()
 		flp=false,
 		dx=0,
 		dy=0,
-		max_dx=2,
+		max_dx=100, -- changed
 		max_dy=3,
 		acc=0.2,
 		boost=4,
+		dash=6,
 		anim=0,
 		running=false,
 		jumping=false,
 		falling=false,
 		sliding=false,
-		landed=false
+		landed=false,
+		dashing=false
 	}
 
 	gravity=0.3

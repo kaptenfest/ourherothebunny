@@ -35,6 +35,33 @@ function player_update()
 		player.landed=false
 	end
 
+	-- dash
+	if btnp(🅾️) 
+	and player.flp then
+		player.dx-=player.dash
+		if player.dx>1.3 then
+			player.dashing=true
+		else
+			player.dashing=false
+		end
+	end
+
+	if player.dx>1.4 or player.dx<-1.4 then
+		player.dashing=true
+	else
+		player.dashing=false
+	end
+
+	if btnp(🅾️) 
+	and player.flp==false then
+		player.dx+=player.dash
+		if player.dx<-1.3 then
+			player.dashing=true
+		else
+			player.dashing=false
+		end
+	end
+
   --check collision up and down
 	if player.dy>0 then
 		player.falling=true
@@ -95,12 +122,14 @@ function player_update()
 end
 
 function player_animate()
-	if player.jumping then
+	if player.jumping and player.dashing == false then
 		player.sp=8
-	elseif player.falling then
+	elseif player.falling and player.dashing == false then
 		player.sp=11
 	elseif player.sliding then
 		player.sp=9
+	elseif player.dashing then
+		player.sp=12
 	elseif player.running == true then
 		if time()-player.anim>.08 then
 			player.anim=time()
